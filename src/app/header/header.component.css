@@ -1,0 +1,38 @@
+.topnav {
+  overflow: hidden;
+  direction: rtl;
+}
+
+.topnav a {
+  float: right;
+  color: rgb(74, 74, 74);
+  text-align: right;
+  text-decoration: none;
+  font-size: 14.5px;
+  padding: 10px 4px;
+}
+
+.topnav a.first {
+  padding-right: 180px;
+}
+
+.topnav a.mid {
+    font-size: 26px;
+    color: rgb(203, 203, 203);
+    padding: 1px 5px;
+}
+
+.topnav a.last {
+  padding-right: 50px;
+  font-size: 16px;
+}
+
+.topnav a:hover {
+  color: rgb(213, 0, 95);
+}
+
+.border-nav {
+  background: linear-gradient(to right, red, purple);
+  padding: 1.5px 0px;
+  margin-top: 5px;
+}

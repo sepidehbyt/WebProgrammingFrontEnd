@@ -1,0 +1,153 @@
+.search{
+  overflow: hidden;
+  direction: rtl;
+  font-family: Yekan;
+  background-image: url("../../assets/pic/Pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  text-align: center;
+  height: 725px;
+}
+
+.search .img-holder{
+  height:200px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+}
+
+.search p.first {
+  width: 100%;
+  font-size: 35px;
+  letter-spacing: 0px;
+  font-weight: bold;
+  line-height: 2.3;
+  height: auto;
+}
+
+.search p.second {
+  width: 100%;
+  font-size: 15px;
+  letter-spacing: 0px;
+  color: gray;
+  margin-top: -25px;
+  line-height: 2.3;
+  height: auto;
+}
+
+.search form {
+  width: 700px;
+  height: 75px;
+  background-color: white;
+  border-radius: 3px;
+  justify-content: space-around;
+  margin-right: 25%;
+  margin-bottom: 280px;
+  box-shadow: 3px 0px 10px rgb(203, 203, 203), -3px 0px 10px rgb(203, 203, 203);
+}
+
+.search form div.first {
+  display: flex;
+  flex-direction: row;
+  width: 130px;
+  height: 50px;
+}
+
+.search form div.second {
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  height: 50px;
+  font-size: 12px;
+  margin-top: 35px;
+  text-decoration: underline;
+  color: gray;
+}
+
+.history-fa {
+  padding-top: 2px;
+}
+
+input[list] {
+  font: 18px Yekan;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(226, 226, 226);
+}
+
+.loc-div {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 50px;
+}
+
+.search-fa {
+    position: absolute;
+    margin-top: 25px;
+    font-size: 25px;
+    padding-right: 25px;
+}
+
+.cities {
+  padding-right: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 135px;
+  height: 55px;
+}
+
+.loc {
+  color: rgb(226, 226, 226);
+  padding-right: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 475px;
+  height: 55px;
+  border-left-width: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.pin-fa {
+  position: absolute;
+  color: rgb(226, 226, 226);
+  margin-top: 25px;
+  font-size: 25px;
+  padding-right: 25px;
+}
+
+.loc-guide {
+  position: absolute;
+  width: 127px;
+  height: 11px;
+  background-color: white;
+  font-size: 10px;
+  right: 530px;
+  top: 435px;
+}
+
+.loc-button {
+  margin-top: 10px;
+  width: 100px;
+  height: 55px;
+  padding-left: 15px;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+  background-image: linear-gradient(to right, rgb(212,0,98), purple);
+  border-width: 0px;
+}
+
+.mag-fa{
+  margin-right: 10px;
+  color: white;
+  font-size: 30px;
+}
+
+input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+

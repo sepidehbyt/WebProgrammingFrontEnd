@@ -1,0 +1,35 @@
+<div class="search">
+  <div class="img-holder row justify-content-center">
+      <img src="../../assets/pic/REYHOON.png" class="logo col-md-2"/>
+  </div>
+  <div class="row search-titles justify-content-center">
+    <p class="first col-md-8">سفارش آنلاین از بهترین رستوران ها و فست فود ها</p>
+    <p class="second col-md-8">برای دیدن لیست رستوران‌ها و فست فودهایی که به شما سرویس می دهند، منطقه خود را وارد کنید.</p>
+  </div>
+  <form>
+    <div class="first">
+      <input class = "cities" list="cities" name="cities" value="تهران" placeholder="شهر" onfocus="this.value=''">
+      <i class="fa fa-chevron-down search-fa"></i>
+      <datalist id="cities">
+          <option value="تهران">
+          <option value="اصفهان">
+          <option value="شیراز">
+          <option value="تبریز">
+          <option value="مشهد">
+      </datalist>
+      <p class="loc-guide">منطقه خود را وارد کنید</p>
+      <div class="loc-div">
+          <input class = "loc" list = "locc" name = "locc" placeholder="مثلا نیاوران" onfocus="this.value=''">
+          <i class="fa fa-map-marker-alt pin-fa"></i>
+          <datalist id="locc">
+              <option>&#xf124; جستجوی خودکار منطقه ی شما</option>
+          </datalist>
+      </div>
+      <button class="loc-button"><i class="fa fa-search mag-fa"></i></button>
+      </div>
+      <div class="second">
+        <i class="fa fa-history history-fa"></i>
+        آخرین جستجو: تهران، شیخ هادی، چهارراه ولیعصر
+      </div>
+  </form>
+</div>
