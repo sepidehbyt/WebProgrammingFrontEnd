@@ -5,7 +5,7 @@ import { HomeSearchComponent } from './home-search/home-search.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'list', component: RestaurantListComponent}
 ];
 

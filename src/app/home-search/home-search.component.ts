@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeSearchService } from '../home-search.service';
 
 @Component({
   selector: 'app-home-search',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeSearchComponent implements OnInit {
 
-  constructor() { }
+  private city: string;
+
+  constructor(private homeSeacrhService: HomeSearchService) {}
 
   ngOnInit() {
+    this.homeSeacrhService.getArea("tehran");
+    console.log(this.homeSeacrhService.getArea("tehran"));
   }
 
 }
