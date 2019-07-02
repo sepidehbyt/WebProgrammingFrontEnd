@@ -8,7 +8,8 @@
   </div>
   <form>
     <div class="first">
-      <input class = "city" list="city" name="city" value="تهران" placeholder="شهر" onfocus="this.value=''">
+      <input class = "city" list="city" name="city" value="تهران" placeholder="شهر" onfocus="this.value=''"
+      [(ngModel)]="cityChoose" (change)="popUpArea()">
       <i class="fa fa-chevron-down search-fa"></i>
       <datalist id="city">
           <option value="تهران">

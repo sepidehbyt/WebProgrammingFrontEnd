@@ -88,8 +88,8 @@ export class HomeComponent implements OnInit {
           }
       },
       error: function(jqXHR, textStatus, errorThrown) {
-          alert("failed");
-          console.log(jqXHR.status);
+          alert("failed and im in jquery #1");
+          // console.log(jqXHR.status);
       }
   });
   }
@@ -175,11 +175,11 @@ export class HomeComponent implements OnInit {
               c++;
           });
           $("#eight-col-ajax-xml").append(ajaxXML);
-          console.log(ajaxXML);
+          // console.log(ajaxXML);
       },
       error: function(jqXHR, textStatus, errorThrown) {
-          alert("failed");
-          console.log(jqXHR.status);
+          alert("failed and im in jquery #2");
+          // console.log(jqXHR.status);
       }
   });
 

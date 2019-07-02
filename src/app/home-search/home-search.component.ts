@@ -6,15 +6,27 @@ import { HomeSearchService } from '../home-search.service';
   templateUrl: './home-search.component.html',
   styleUrls: ['./home-search.component.css']
 })
+
 export class HomeSearchComponent implements OnInit {
 
-  private city: string;
+  public areas;
+  cityChoose = "";
 
   constructor(private homeSeacrhService: HomeSearchService) {}
 
-  ngOnInit() {
-    this.homeSeacrhService.getArea("tehran");
-    console.log(this.homeSeacrhService.getArea("tehran"));
+  ngOnInit() {}
+
+  popUpArea() {
+    console.log(this.cityChoose);
+    this.getArea(this.cityChoose);
+  }
+
+  getArea(city) {
+     this.homeSeacrhService.getArea(city).subscribe(
+          data => { this.areas = data},
+          err => console.error(err),
+          () => console.log('done loading foods ' + this.areas)
+        );
   }
 
 }

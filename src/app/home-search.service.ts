@@ -15,7 +15,5 @@ export class HomeSearchService {
 
   public getArea(city) {
     return this.http.post<any>('http://127.0.0.1:8000/api/getarea', {'city' : city}, HttpOptions);
-    // console.log(this.HTTP.post<any>('http://127.0.0.1:8000/api/getarea', {'city' : city}, HttpOptions));
-    // alert(this.http.post<any>('http://127.0.0.1:8000/api/getarea', {'city' : 'tehran'}, HttpOptions));
   }
 }
