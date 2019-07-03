@@ -157,6 +157,7 @@ body {
   margin-top: -20px;
 }
 
+
 .ratings-rate {
   display: flex;
   flex-direction: row;
@@ -179,10 +180,15 @@ body {
 
 .rating-rate-fade {
   font-size: 16px;
+  max-height: 30px;
   background-image: linear-gradient(270deg,black 0%,transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display:inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: -3px;
+  margin-right: 3px;
 }
 
 

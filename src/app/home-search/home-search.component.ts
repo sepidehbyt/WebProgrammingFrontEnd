@@ -9,8 +9,9 @@ import { HomeSearchService } from '../home-search.service';
 
 export class HomeSearchComponent implements OnInit {
 
-  public areas;
+  public areas = [{"area" : "جستجوی خودکار منطقه ی شما"}];
   cityChoose = "";
+  areaChoose = "";
 
   constructor(private homeSeacrhService: HomeSearchService) {}
 
@@ -27,6 +28,11 @@ export class HomeSearchComponent implements OnInit {
           err => console.error(err),
           () => console.log('done loading foods ' + this.areas)
         );
+        document.getElementById("areaChoose").focus();
+  }
+
+  submitSeacrh() {
+    console.log(this.cityChoose+"   "+this.areaChoose);
   }
 
 }

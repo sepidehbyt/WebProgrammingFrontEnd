@@ -1,0 +1,113 @@
+.restaurant-banner{
+  width: 100%;
+}
+.available-restaurants{
+  font-size: 20px;
+  text-align: right;
+  direction: rtl;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.divider{
+  background-color: #e2e2e2;
+  height: 1px;
+}
+.search-holder{
+  margin: 15px;
+}
+.search-restaurant-big{
+  width: 100%;
+  height: 35px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  direction: rtl;
+  padding: 15px;
+}
+.search-restaurant{
+  width: 100%;
+  height: 35px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  direction: rtl;
+}
+.filter-list{
+  border: 1px solid #e2e2e2;
+  border-radius: .5rem;
+  height: auto;
+}
+.title{
+  line-height: 2;
+  text-align: right;
+}
+.restaurant-icons{
+  margin-top: 10px;
+  height:auto;
+  float: right;
+}
+
+.restaurant-items{
+  box-shadow: 1px 0px 10px rgb(203, 203, 203), -1px 0px 10px rgb(203, 203, 203);
+  height: auto;
+}
+.button-holder{
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+.restaurant-button{
+  width: 150px;
+  height: 35px;
+  background-color: white;
+  font-family: "Yekan";
+  font-size: 15px;
+  color: rgb(211, 0, 98);
+  border-radius: 20px;
+  border-style: solid;
+  margin-top: 15px;
+  border-color: rgb(211, 0, 98);
+  border-width: 2px;
+}
+.restaurant-items-detail{
+  margin-top: 20px;
+}
+.margin-borders{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.checkbox-holder{
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #eee;
+}
+.checkbox-label{
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 3px;
+}
+.box{
+  width: 20px;
+  margin-bottom: 12px;
+  height: 20px;
+}
+.restaurant-card{
+  margin-bottom: 30px;
+}
+.my-container{
+  margin: 0px;
+}
+.img-holder{
+  padding: 0px;
+}
+
+
+
+.restaurant-addr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: black;
+  margin-top: 7px;
+  padding: 0px;
+}

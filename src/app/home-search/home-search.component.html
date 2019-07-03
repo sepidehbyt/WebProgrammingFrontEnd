@@ -20,13 +20,18 @@
       </datalist>
       <p class="loc-guide">منطقه خود را وارد کنید</p>
       <div class="loc-div">
-          <input class = "loc" list = "area" name = "area" placeholder="مثلا نیاوران" onfocus="this.value=''">
+          <input class = "loc" id = "areaChoose" list = "area" name = "area" placeholder="مثلا نیاوران" onfocus="this.value=''"
+          [(ngModel)]="areaChoose">
           <i class="fa fa-map-marker-alt pin-fa"></i>
           <datalist id="area">
-              <option>&#xf124; جستجوی خودکار منطقه ی شما</option>
-          </datalist>
+              <option *ngFor="let area of areas">
+                {{ area.area }}
+              </option>
+        </datalist>
       </div>
-      <button class="loc-button"><i class="fa fa-search mag-fa"></i></button>
+      <button class="loc-button" (click)="submitSeacrh()" >
+        <i class="fa fa-search mag-fa"></i>
+      </button>
       </div>
       <div class="second">
         <i class="fa fa-history history-fa"></i>
