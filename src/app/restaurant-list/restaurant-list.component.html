@@ -11,311 +11,72 @@
     <input class="search-restaurant-big" placeholder="جستجو رستوران در این محدوده">
   </div>
   <div class="row margin-borders justify-content-md-center">
-    <div class="col-md-9">
-        <div class="col-md-4 restaurant-card">
+    <div class="col-md-9 row">
+        <div *ngFor="let restaurant of restaurantList.openRestaurants" class="col-md-4 restaurant-card">
             <div class="restaurant-items">
               <div class="row">
-                <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
+                <img class="restaurant-icons col-md-4" [attr.src]="restaurant.logo">
                 <div class="col-md-8 restaurant-items-detail">
                     <p class="ratings-name-p col-md-12">
-                        باگت (اندرزگو)
+                        {{ restaurant.name }}
                     </p>
                     <div class="ratings-rate col-md-12">
                         <div class="div-line"></div>
-                        <div class="rating-rate-count">(81)</div>
                         <span class="fa fa-star-half-alt checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
-                        <div class="rating-rate-number">4.5</div>
+                        <div class="rating-rate-number"> {{ restaurant.average_rate }}</div>
                         <div class="div-line"></div>
                     </div>
                     <div class="restaurant-addr col-md-12">
-                        فست فود • پیتزا • برگر • ساندویچ
+                        {{ restaurant.categories }}
                     </div>
                     <p class="rating-rate-fade col-md-12">
-                        بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
+                        {{ restaurant.address }}
                     </p>
                 </div>
               </div>
-                <div class="row button-holder">
-                  <button class="restaurant-button col-12">
-                      شروع سفارش
-                  </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 restaurant-card">
-            <div class="restaurant-items">
-              <div class="row">
-                <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                <div class="col-md-8 restaurant-items-detail">
+              <div class="row button-holder align-items-end">
+                <button class="restaurant-button col-12">
+                    شروع سفارش
+                </button>
+              </div>
+              </div>
+          </div>
+          <div class="col-md-12 closed-title">رستوران های بسته</div>
+          <div *ngFor="let restaurant of restaurantList.closeRestaurants" class="col-md-4 col-sm-12 restaurant-card-close">
+            <div class="restaurant-items-close">
+              <div class="row justify-content-md-center">
+                <img class="restaurant-icons col-4" [attr.src]="restaurant.logo">
+                <div class="col-8 restaurant-items-detail">
                     <p class="ratings-name-p col-md-12">
-                        باگت (اندرزگو)
+                        {{ restaurant.name }}
                     </p>
                     <div class="ratings-rate col-md-12">
                         <div class="div-line"></div>
-                        <div class="rating-rate-count">(81)</div>
                         <span class="fa fa-star-half-alt checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
-                        <div class="rating-rate-number">4.5</div>
+                        <div class="rating-rate-number"> {{ restaurant.average_rate }}</div>
                         <div class="div-line"></div>
                     </div>
                     <div class="restaurant-addr col-md-12">
-                        فست فود • پیتزا • برگر • ساندویچ
+                        {{ restaurant.categories }}
                     </div>
                     <p class="rating-rate-fade col-md-12">
-                        بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
+                        {{ restaurant.address }}
                     </p>
                 </div>
               </div>
-                <div class="row button-holder">
-                  <button class="restaurant-button col-12">
-                      شروع سفارش
-                  </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 restaurant-card">
-            <div class="restaurant-items">
-              <div class="row">
-                <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                <div class="col-md-8 restaurant-items-detail">
-                    <p class="ratings-name-p col-md-12">
-                        باگت (اندرزگو)
-                    </p>
-                    <div class="ratings-rate col-md-12">
-                        <div class="div-line"></div>
-                        <div class="rating-rate-count">(81)</div>
-                        <span class="fa fa-star-half-alt checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <div class="rating-rate-number">4.5</div>
-                        <div class="div-line"></div>
-                    </div>
-                    <div class="restaurant-addr col-md-12">
-                        فست فود • پیتزا • برگر • ساندویچ
-                    </div>
-                    <p class="rating-rate-fade col-md-12">
-                        بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                    </p>
-                </div>
+              <div class="row button-holder-close align-items-end">
+                <button class="restaurant-button-close col-12">
+                   شروع سفارش از {{ restaurant.opening_time - restaurantList.hour}} ساعت
+                </button>
               </div>
-                <div class="row button-holder">
-                  <button class="restaurant-button col-12">
-                      شروع سفارش
-                  </button>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4 restaurant-card">
-              <div class="restaurant-items">
-                <div class="row">
-                  <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                  <div class="col-md-8 restaurant-items-detail">
-                      <p class="ratings-name-p col-md-12">
-                          باگت (اندرزگو)
-                      </p>
-                      <div class="ratings-rate col-md-12">
-                          <div class="div-line"></div>
-                          <div class="rating-rate-count">(81)</div>
-                          <span class="fa fa-star-half-alt checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <div class="rating-rate-number">4.5</div>
-                          <div class="div-line"></div>
-                      </div>
-                      <div class="restaurant-addr col-md-12">
-                          فست فود • پیتزا • برگر • ساندویچ
-                      </div>
-                      <p class="rating-rate-fade col-md-12">
-                          بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                      </p>
-                  </div>
-                </div>
-                  <div class="row button-holder">
-                    <button class="restaurant-button col-12">
-                        شروع سفارش
-                    </button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4 restaurant-card">
-              <div class="restaurant-items">
-                <div class="row">
-                  <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                  <div class="col-md-8 restaurant-items-detail">
-                      <p class="ratings-name-p col-md-12">
-                          باگت (اندرزگو)
-                      </p>
-                      <div class="ratings-rate col-md-12">
-                          <div class="div-line"></div>
-                          <div class="rating-rate-count">(81)</div>
-                          <span class="fa fa-star-half-alt checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <div class="rating-rate-number">4.5</div>
-                          <div class="div-line"></div>
-                      </div>
-                      <div class="restaurant-addr col-md-12">
-                          فست فود • پیتزا • برگر • ساندویچ
-                      </div>
-                      <p class="rating-rate-fade col-md-12">
-                          بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                      </p>
-                  </div>
-                </div>
-                  <div class="row button-holder">
-                    <button class="restaurant-button col-12">
-                        شروع سفارش
-                    </button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4 restaurant-card">
-              <div class="restaurant-items">
-                <div class="row">
-                  <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                  <div class="col-md-8 restaurant-items-detail">
-                      <p class="ratings-name-p col-md-12">
-                          باگت (اندرزگو)
-                      </p>
-                      <div class="ratings-rate col-md-12">
-                          <div class="div-line"></div>
-                          <div class="rating-rate-count">(81)</div>
-                          <span class="fa fa-star-half-alt checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <div class="rating-rate-number">4.5</div>
-                          <div class="div-line"></div>
-                      </div>
-                      <div class="restaurant-addr col-md-12">
-                          فست فود • پیتزا • برگر • ساندویچ
-                      </div>
-                      <p class="rating-rate-fade col-md-12">
-                          بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                      </p>
-                  </div>
-                </div>
-                  <div class="row button-holder">
-                    <button class="restaurant-button col-12">
-                        شروع سفارش
-                    </button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4 restaurant-card">
-              <div class="restaurant-items">
-                <div class="row">
-                  <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                  <div class="col-md-8 restaurant-items-detail">
-                      <p class="ratings-name-p col-md-12">
-                          باگت (اندرزگو)
-                      </p>
-                      <div class="ratings-rate col-md-12">
-                          <div class="div-line"></div>
-                          <div class="rating-rate-count">(81)</div>
-                          <span class="fa fa-star-half-alt checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <div class="rating-rate-number">4.5</div>
-                          <div class="div-line"></div>
-                      </div>
-                      <div class="restaurant-addr col-md-12">
-                          فست فود • پیتزا • برگر • ساندویچ
-                      </div>
-                      <p class="rating-rate-fade col-md-12">
-                          بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                      </p>
-                  </div>
-                </div>
-                  <div class="row button-holder">
-                    <button class="restaurant-button col-12">
-                        شروع سفارش
-                    </button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4 restaurant-card">
-              <div class="restaurant-items">
-                <div class="row">
-                  <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                  <div class="col-md-8 restaurant-items-detail">
-                      <p class="ratings-name-p col-md-12">
-                          باگت (اندرزگو)
-                      </p>
-                      <div class="ratings-rate col-md-12">
-                          <div class="div-line"></div>
-                          <div class="rating-rate-count">(81)</div>
-                          <span class="fa fa-star-half-alt checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <div class="rating-rate-number">4.5</div>
-                          <div class="div-line"></div>
-                      </div>
-                      <div class="restaurant-addr col-md-12">
-                          فست فود • پیتزا • برگر • ساندویچ
-                      </div>
-                      <p class="rating-rate-fade col-md-12">
-                          بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                      </p>
-                  </div>
-                </div>
-                  <div class="row button-holder">
-                    <button class="restaurant-button col-12">
-                        شروع سفارش
-                    </button>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4 restaurant-card">
-              <div class="restaurant-items">
-                <div class="row">
-                  <img class="restaurant-icons col-md-4" src="assets/pic/pizzahot.jpg">
-                  <div class="col-md-8 restaurant-items-detail">
-                      <p class="ratings-name-p col-md-12">
-                          باگت (اندرزگو)
-                      </p>
-                      <div class="ratings-rate col-md-12">
-                          <div class="div-line"></div>
-                          <div class="rating-rate-count">(81)</div>
-                          <span class="fa fa-star-half-alt checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <div class="rating-rate-number">4.5</div>
-                          <div class="div-line"></div>
-                      </div>
-                      <div class="restaurant-addr col-md-12">
-                          فست فود • پیتزا • برگر • ساندویچ
-                      </div>
-                      <p class="rating-rate-fade col-md-12">
-                          بلوار اندرزگو، بین کاوه و قیطریه، نبش مهرمحمدی
-                      </p>
-                  </div>
-                </div>
-                  <div class="row button-holder">
-                    <button class="restaurant-button col-12">
-                        شروع سفارش
-                    </button>
-                  </div>
               </div>
           </div>
 </div>
@@ -328,16 +89,8 @@
         <div class="search-holder">
             <input class="search-restaurant col-md-10" placeholder="جستجو دسته بندی غذاها">
         </div>
-        <div class="custom-control custom-checkbox col-md-12 checkbox-holder">
-          <label class="custom-control-label checkbox-label" for="customCheck1">ساندویچ</label>
-          <input type="checkbox" class="custom-control-input box" id="customCheck1">
-        </div>
-        <div class="custom-control custom-checkbox col-md-12 checkbox-holder">
-          <label class="custom-control-label checkbox-label" for="customCheck1">ساندویچ</label>
-          <input type="checkbox" class="custom-control-input box" id="customCheck1">
-        </div>
-        <div class="custom-control custom-checkbox col-md-12 checkbox-holder">
-          <label class="custom-control-label checkbox-label" for="customCheck1">ساندویچ</label>
+        <div *ngFor="let category of restaurantList.categories" class="custom-control custom-checkbox col-md-12 checkbox-holder">
+          <label class="custom-control-label checkbox-label" for="customCheck1"> {{ category.name }} </label>
           <input type="checkbox" class="custom-control-input box" id="customCheck1">
         </div>
       </div>
