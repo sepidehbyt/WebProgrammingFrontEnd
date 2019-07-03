@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeSearchComponent } from './home-search/home-search.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { FormsModule } from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule,
     FormsModule
   ],
   providers: [
