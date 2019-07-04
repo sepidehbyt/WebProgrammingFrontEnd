@@ -1,0 +1,119 @@
+.my-container{
+  margin: 0px;
+}
+
+.img-holder{
+  padding: 0px;
+}
+
+.restaurant-banner{
+  width: 100%;
+}
+
+.restaurant-cover{
+  z-index: 100000;
+  height: auto;
+  padding-bottom: 50px;
+  box-shadow: 0rem 1.7rem 1.4rem 0.8rem rgba(0,0,0,.1);
+}
+
+.cover-container{
+  display: flex;
+  justify-content: center;
+}
+
+.divider{
+  height: 1px;
+  background-color: gray;
+}
+
+.divider-holder{
+  display: flex;
+  justify-content: center;
+  margin-top: -45px;
+}
+
+.title-restaurant{
+  font-size: 3rem;
+  font-weight: 700;
+  color: #202020;
+  text-align: center;
+}
+
+.ratings-rate{
+  width:100%;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.ratings-name-p{
+  width:100%;
+  text-align: right;
+  justify-content: flex-end;
+}
+.rating-rate-fade{
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.rating-rate-number{
+  margin-right: 10px;
+  align-self:center;
+  color: #f9b92b;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2;
+  margin-right: 10px;
+}
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #d3d3d3;
+}
+.full {
+  color: #f9b92b;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #f9b92b;
+}
+.categories{
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+.tabs{
+  margin-top: -45px;
+}
+
+.centerizer{
+  display: flex;
+  justify-content: center;
+}
+
+.address{
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  font-style: normal;
+  margin-top: 6.4px;
+  margin-top: .4rem;
+  text-align: center;
+}
+.nav-item{
+    text-align: center;
+    color: #202020;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.restaurant-icon{
+  display: flex;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+}

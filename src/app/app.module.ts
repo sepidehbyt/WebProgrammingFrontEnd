@@ -11,6 +11,7 @@ import { HomeSearchComponent } from './home-search/home-search.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RestaurantDataComponent } from './restaurant-data/restaurant-data.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     HeaderComponent,
     HomeSearchComponent,
-    RestaurantListComponent
+    RestaurantListComponent,
+    RestaurantDataComponent
   ],
   imports: [
     BrowserModule,

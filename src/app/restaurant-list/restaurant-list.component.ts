@@ -13,11 +13,16 @@ export class RestaurantListComponent implements OnInit {
   checkBoxValue = [];
   filterSearchValue = "";
   restaurantNum = 0;
+  restaurantArea = "";
+  restaurantCity="";
   restaurantService : RestaurantService;
   constructor(restaurantService : RestaurantService) {
     this.restaurantService = restaurantService;
     restaurantService.getRestaurants('تهران','میرداماد','').subscribe(
-      data => { this.restaurantList = data; this.restaurantNum = data.allRestaurantsSize;},
+      data => { this.restaurantList = data;
+                this.restaurantNum = data.allRestaurantsSize;
+                this.restaurantArea = data.area;
+                this.restaurantCity = data.city;},
       err => console.error(err),
       () => console.log('done loading foods ' + JSON.stringify(this.restaurantList))
     );

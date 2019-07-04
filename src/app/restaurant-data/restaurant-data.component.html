@@ -1,0 +1,55 @@
+<div class="row my-container justify-content-md-center">
+  <div class="col-md-12 img-holder">
+    <img src="../../assets/pic/restaurantData.jpg" alt="" class="restaurant-banner">
+  </div>
+  <div class="col-md-12 justify-content-md-center cover-container row">
+    <div class="restaurant-cover col-md-8 row justify-content-md-center">
+      <div class="centerizer col-md-8">
+          <img class="restaurant-icon" src="assets/pic/pizzahot.jpg">
+      </div>
+      <div class="col-md-12 title-restaurant">
+        {{ restaurantName }}
+      </div>
+      <div class="ratings-rate col-md-12">
+        <div class="rating-rate-number"> {{ average_rate }}</div>
+          <ngb-rating [(rate)]="average_rate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+          <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+            </span>
+          </ng-template>
+      </div>
+      <div class="categories col-md-12">
+        {{ categories }}
+      </div>
+      <div class="address col-md-12">
+        {{ address }}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 divider-holder justify-content-md-center">
+    <div class="col-md-6 divider">
+
+    </div>
+  </div>
+  <div class="col-md-12 justify-content-md-center cover-container row">
+    <div class="col-md-6">
+        <div class="tabs">
+            <ul class="nav justify-content-md-center">
+              <li class="col-md-4 nav-item">
+                <a class="nav-link active" href="#">نظرات کاربران</a>
+              </li>
+              <li class="col-md-4 nav-item">
+                <a class="nav-link" href="#">اطلاعات رستوران</a>
+              </li>
+              <li class="col-md-4 nav-item">
+                <a class="nav-link" href="#">منوی رستوران</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+  </div>
+  <div>
+  </div>
+
+</div>
