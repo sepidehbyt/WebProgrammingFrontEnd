@@ -126,7 +126,7 @@ a{
     font-weight: 400;
 }
 .cover-container > ul {
-  list-style: none; 
+  list-style: none;
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -167,14 +167,23 @@ input {
 }
 .buy-btn{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   margin-top: 34px;
+  color: #d40062;
 }
 .buy-btn > button {
   border-radius: 5rem;
   background-color: white;
   border-width: 1px;
   border-color: #9b9b9b;
+}
+.buy-btn > button:hover{
+  background-color: #d40062;
+  color: white;
+}
+.icon-plus{
+  margin-left: 10px;
 }
 .food-card{
   border-radius: 5px;
@@ -198,4 +207,39 @@ body{
 }
 .price{
   direction: rtl;
+}
+.divider{
+  height: 1px;
+  background-color: grey;
+  margin-top: 5px;
+}
+.description{
+  direction: rtl;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+}
+.icon{
+  font-size: 18px;
+  margin-left: 5px;
+}
+.work-hour{
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid gray 1px;
+  justify-content: space-between;
+}
+.map-holder{
+  padding: 10px;
+}
+.mapimg{
+  width: 100%;
+}
+.title{
+  margin-bottom: 10px;
+}
+
+.description{
+  margin-bottom: 10px;
 }

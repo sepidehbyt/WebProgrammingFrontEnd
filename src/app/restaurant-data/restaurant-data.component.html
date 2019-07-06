@@ -39,12 +39,12 @@
               <a  href="#">اطلاعات رستوران</a>
             </li>
             <li class="col-md-4 atags">
-              <a href="#">منوی رستوران</a>
+              <a href='#foodstart'>منوی رستوران</a>
             </li>
           </ul>
     </div>
   </div>
-  
+
   <div class="col-md-12 justify-content-md-center cover-container row">
     <div class="col-md-8  ">
       <input placeholder="جستجو در منوی این رستوران"/>
@@ -53,72 +53,58 @@
 
   <div class="col-md-12 justify-content-md-center cover-container row">
     <div class="col-md-8  ">
-      <div class="row padder justify-content-md-center">
-        <div class="col-md-12 title">
-          هات داگ
+      <div *ngFor="let food of data.foods" class="row padder justify-content-md-center">
+        <div class="col-md-12 title" id='foodstart'>
+          {{ food.foodSet.food_set }}
         </div>
-          <div class="col-md-6 food-card">
+          <div *ngFor="let foodset of food.foods" class="col-md-6 food-card">
               <div class="food-container">
                 <div class="food-header">
-                    <div class="price"> 26,800 هزار تومان</div>
-                    <div class="name">هات داگ</div>
+                    <div class="price"> {{foodset.price}} هزار تومان</div>
+                    <div class="name">{{foodset.name}}</div>
                 </div>
                 <div class="food-body row">
-                  <img class="col-md-4 food-pic" src="../../assets/pic/hotdog.jpeg"/>
-                  <div class="col-md-8 food-desc">
+                  <div class="col-md-12 food-desc">
                     <div class="two-line-des">
-                        هات داگ گوشت تازه ۹۰%، سس آلفردو، پیاز تازه، جعفری و پوره سیب زمینی
+                      {{foodset.description}}
                     </div>
                     <div class="buy-btn">
-                      <button>افزودن به سبد خرید</button>
+                      <button>افزودن به سبد خرید<i class="fa fa-plus icon-plus"></i></button>
                     </div>
                   </div>
                 </div>
               </div>
           </div>
-          <div class="col-md-6 food-card">
-              <div class="food-container">
-                <div class="food-header">
-                    <div class="price">26,800 هزار تومان</div>
-                    <div class="name">هات داگ</div>
-                </div>
-                <div class="food-body row">
-                  <img class="col-md-4 food-pic" src="../../assets/pic/hotdog.jpeg"/>
-                  <div class="col-md-8 food-desc">
-                    <div class="two-line-des">
-                        هات داگ گوشت تازه ۹۰%، سس آلفردو، پیاز تازه، جعفری و پوره سیب زمینی
-                    </div>
-                    <div class="buy-btn">
-                      <button>افزودن به سبد خرید</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="col-md-6 food-card">
-              <div class="food-container">
-                <div class="food-header">
-                    <div class="price">26,800 هزار تومان</div>
-                    <div class="name">هات داگ</div>
-                </div>
-                <div class="food-body row">
-                  <img class="col-md-4 food-pic" src="../../assets/pic/hotdog.jpeg"/>
-                  <div class="col-md-8 food-desc">
-                    <div class="two-line-des">
-                        هات داگ گوشت تازه ۹۰%، سس آلفردو، پیاز تازه، جعفری و پوره سیب زمینی
-                    </div>
-                    <div class="buy-btn">
-                      <button>افزودن به سبد خرید</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-        
+      </div>
     </div>
   </div>
 
-  <div>
+  <div class="col-md-12 justify-content-md-center cover-container row">
+    <div class="col-md-8">
+      <div class="row padder justify-content-md-center">
+        <div class="col-md-12 title" id='foodstart'>
+          اطلاعات رستوران
+        </div>
+        <div class="divider col-md-12">
+        </div>
+        <div class="col-md-4 map-holder">
+          <img class="mapimg" src="../../assets/pic/map.png" alt="">
+        </div>
+        <div class="col-md-8">
+            <div class="title col-md-12">دینارو</div>
+            <div class="description col-md-12">
+                <i class="fa fa-map-marker icon"></i>پاسداران، بالا تر از برج سفید، نبش بوستان دهم
+            </div>
+            <div class="description col-md-12">
+                <i class="fa fa-clock-o icon" style="font-weight: bold" aria-hidden="true"></i>ساعت سفارش گیری
+            </div>
+            <div class="work-hour col-md-12">
+              <div>از 12:45 ظهر تا 10:45 شب</div>
+              <div>همه روزه</div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
