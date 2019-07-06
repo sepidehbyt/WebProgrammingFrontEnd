@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="row button-holder align-items-end">
-                <button class="restaurant-button col-12">
+                <button class="restaurant-button col-12" (click)="resSelect(restaurant.id)">
                     شروع سفارش
                 </button>
               </div>
@@ -71,7 +71,7 @@
                 </div>
               </div>
               <div class="row button-holder-close align-items-end">
-                <button class="restaurant-button-close col-12">
+                <button class="restaurant-button-close col-12" (click)="resSelect(restaurant.id)">
                    شروع سفارش از {{ restaurant.opening_time - restaurantList.hour}} ساعت
                 </button>
               </div>

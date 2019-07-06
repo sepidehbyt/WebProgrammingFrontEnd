@@ -7,8 +7,8 @@ import { RestaurantDataComponent } from './restaurant-data/restaurant-data.compo
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'list', component: RestaurantListComponent},
-  { path: 'data', component: RestaurantDataComponent},
+  { path: 'list', component: RestaurantListComponent,pathMatch:'prefix'},
+  { path: 'data', component: RestaurantDataComponent,pathMatch:'prefix'},
 ];
 
 @NgModule({

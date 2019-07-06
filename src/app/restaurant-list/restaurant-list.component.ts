@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -14,10 +15,18 @@ export class RestaurantListComponent implements OnInit {
   filterSearchValue = "";
   restaurantNum = 0;
   restaurantArea = "";
+  router : Router;
   restaurantCity="";
   restaurantService : RestaurantService;
-  constructor(restaurantService : RestaurantService) {
+  constructor(restaurantService : RestaurantService,router : Router) {
+    this.router = router;
     this.restaurantService = restaurantService;
+    // console.log(window.location.pathname.split('?')[1].split('=')[0] + " " + window.location.pathname.split('&')[1].split('=')[0]);
+
+    // console.log("/list?city=asd&area=asdb".split('?')[1].split('&')[0].split('=')[1] + " " +
+    //  "/list?city=asd&area=asdb".split('&')[1].split('=')[1]);
+
+    // /list?city=&area=
     restaurantService.getRestaurants('تهران','میرداماد','').subscribe(
       data => { this.restaurantList = data;
                 this.restaurantNum = data.allRestaurantsSize;
@@ -57,6 +66,9 @@ export class RestaurantListComponent implements OnInit {
     });
   }
 
+  resSelect(id){
+    this.router.navigateByUrl('/data?id='+id);
+  }
 
   restaurantSearch(){
     this.restaurantList.allRestaurants.forEach(element => {

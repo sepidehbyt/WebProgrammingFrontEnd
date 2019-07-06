@@ -33,13 +33,13 @@
     <div class="col-md-8 justify-content-md-center cover-container tabs">
           <ul class="row justify-content-md-center" style="width: 100%; padding-left: 0px;">
             <li class="col-md-4 atags">
-              <a class="active" href="#">نظرات کاربران</a>
+              <a (click)="scroll2()">نظرات کاربران</a>
             </li>
             <li class="col-md-4 atags">
-              <a  href="#">اطلاعات رستوران</a>
+              <a  (click)="scroll3()">اطلاعات رستوران</a>
             </li>
             <li class="col-md-4 atags">
-              <a href='#foodstart'>منوی رستوران</a>
+              <a (click)="scroll1()">منوی رستوران</a>
             </li>
           </ul>
     </div>
@@ -52,9 +52,9 @@
   </div>
 
   <div class="col-md-12 justify-content-md-center cover-container row">
-    <div class="col-md-8  ">
+    <div class="col-md-8  " id='foodstart'>
       <div *ngFor="let food of data.foods" class="row padder justify-content-md-center">
-        <div class="col-md-12 title" id='foodstart'>
+        <div class="col-md-12 title">
           {{ food.foodSet.food_set }}
         </div>
           <div *ngFor="let foodset of food.foods" class="col-md-6 food-card">
@@ -80,8 +80,8 @@
   </div>
 
   <div class="col-md-12 justify-content-md-center cover-container row">
-    <div class="col-md-8">
-      <div class="row padder justify-content-md-center">
+    <div class="col-md-8" id = "restaurant">
+      <div *ngFor="let restaurant of data.restaurant" class="row padder justify-content-md-center">
         <div class="col-md-12 title" id='foodstart'>
           اطلاعات رستوران
         </div>
@@ -91,20 +91,149 @@
           <img class="mapimg" src="../../assets/pic/map.png" alt="">
         </div>
         <div class="col-md-8">
-            <div class="title col-md-12">دینارو</div>
+            <div class="title col-md-12">{{restaurant.name}}</div>
             <div class="description col-md-12">
-                <i class="fa fa-map-marker icon"></i>پاسداران، بالا تر از برج سفید، نبش بوستان دهم
+                <i class="fa fa-map-marker icon"></i>تهران میرداماد پلاک 1
             </div>
             <div class="description col-md-12">
                 <i class="fa fa-clock-o icon" style="font-weight: bold" aria-hidden="true"></i>ساعت سفارش گیری
             </div>
             <div class="work-hour col-md-12">
-              <div>از 12:45 ظهر تا 10:45 شب</div>
+              <div>از {{restaurant.opening_time}} تا {{restaurant.closing_time}}</div>
               <div>همه روزه</div>
             </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="col-md-12 justify-content-md-center cover-container row">
+      <div class="col-md-8" id = "comments">
+        <div class="row padder justify-content-md-center">
+          <div class="col-md-12 title" id='foodstart'>
+            نظرات کاربران
+          </div>
+          <div class="divider col-md-12">
+          </div>
+          <div class="col-md-12" style="text-align: right; direction:rtl;">
+              شما هم می‌توانید بعد از سفارش از این رستوران، نظر خود را درباره‌ی این رستوران ثبت کنید.
+          </div>
+          <div class="col-md-12">
+            <div class="ratings-rate col-md-12">
+                <ngb-rating [(rate)]="average_rate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                  </span>
+                </ng-template>
+            </div>
+            <div class="rating-rate-number col-md-12" style="text-align: center"> {{ average_rate }}</div>
+          </div>
+          <div *ngFor="let rate of data.rates" class="col-md-12">
+              <div class="divider col-md-12" style="margin-bottom: 10px">
+                </div>
+                <div class="col-md-12" style="display: flex; justify-content: space-evenly">
+                  <div class="col-md-4" style="color: #9b9b9b;
+                  font-size: 18px;">
+                    کیفیت غذا
+                  </div>
+                  <div class="col-md-1">
+                      <div class="rating-rate-number" style="text-align: center; font-size: 18px;"> {{ rate.quality }}</div>
+                  </div>
+                  <div class="col-md-5" style="margin-top: 5px">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width:60%; background-image: linear-gradient(to bottom,#ffc300 0,#ffc300 100%);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="divider col-md-12" style="margin-bottom: 10px">
+                </div>
+                <div class="col-md-12" style="display: flex; justify-content: space-evenly">
+                  <div class="col-md-4" style="color: #9b9b9b;
+                  font-size: 18px;">
+                    کیفیت بسته بندی
+                  </div>
+                  <div class="col-md-1">
+                      <div class="rating-rate-number" style="text-align: center; font-size: 18px;"> {{ rate.packaging }}</div>
+                  </div>
+                  <div class="col-md-5" style="margin-top: 5px">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%; background-image: linear-gradient(to bottom,#ffc300 0,#ffc300 100%);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="divider col-md-12" style="margin-bottom: 10px">
+                </div>
+                <div class="col-md-12" style="display: flex; justify-content: space-evenly">
+                  <div class="col-md-4" style="color: #9b9b9b;
+                  font-size: 18px;">
+                    سرعت ارسال پیک
+                  </div>
+                  <div class="col-md-1">
+                      <div class="rating-rate-number" style="text-align: center; font-size: 18px;"> {{ rate.delivery_time }}</div>
+                  </div>
+                  <div class="col-md-5" style="margin-top: 5px">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%; background-image: linear-gradient(to bottom,#ffc300 0,#ffc300 100%);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="divider col-md-12" style="margin-bottom: 10px">
+                </div>
+                <div class="col-md-12" style="display: flex; justify-content: space-evenly">
+                  <div class="col-md-4" style="color: #9b9b9b;
+                  font-size: 18px;">
+                    برخورد پیک
+                  </div>
+                  <div class="col-md-1">
+                      <div class="rating-rate-number" style="text-align: center; font-size: 18px;"> {{ rate.delivery_react }}</div>
+                  </div>
+                  <div class="col-md-5" style="margin-top: 5px">
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%; background-image: linear-gradient(to bottom,#ffc300 0,#ffc300 100%);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+                </div>
+          </div>
+
+          <div *ngFor="let comment of data.comments" class="col-md-12">
+          <div class="divider col-md-12">
+          </div>
+          <div class="col-md-12">
+            <div class="first-row">
+                <div class="ratings-rate" style="width : auto">
+                    <ngb-rating [(rate)]="comment.quality" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                    <ng-template #t let-fill="fill">
+                      <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                      </span>
+                    </ng-template>
+                    <div class="rating-rate-number"> {{ comment.quality }}</div>
+                </div>
+                <div class="name">
+                  {{comment.author}}
+                </div>
+            </div>
+            <div class="col-md-12" style="text-align:right; color: #777;margin-top: 30px;">
+              {{comment.text}}
+            </div>
+            <div class="col-md-12" style="margin-top: 30px; padding:0px">
+              <div class="first-row">
+                  <div style="width : auto; color: #9b9b9b;">
+                      گزارش
+                  </div>
+                  <div class="name" style="color: #9b9b9b;">
+                    {{comment.created_at}}
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
 
 </div>

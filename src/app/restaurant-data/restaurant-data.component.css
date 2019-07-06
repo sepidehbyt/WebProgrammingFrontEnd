@@ -243,3 +243,7 @@ body{
 .description{
   margin-bottom: 10px;
 }
+.first-row{
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeSearchService } from '../home-search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-search',
@@ -12,8 +13,11 @@ export class HomeSearchComponent implements OnInit {
   public areas = [{"area" : "جستجوی خودکار منطقه ی شما"}];
   cityChoose = "";
   areaChoose = "";
+  router : Router;
 
-  constructor(private homeSeacrhService: HomeSearchService) {}
+  constructor(private homeSeacrhService: HomeSearchService,router : Router) {
+    this.router = router;
+  }
 
   ngOnInit() {}
 
@@ -32,7 +36,9 @@ export class HomeSearchComponent implements OnInit {
   }
 
   submitSeacrh() {
-    console.log(this.cityChoose+"   "+this.areaChoose);
+    // console.log('/list?city='+this.cityChoose+'&area='+this.areaChoose);
+    this.router.navigateByUrl('/list?city='+this.cityChoose+'&area='+this.areaChoose);
+    // this.props.history.push('/list');
   }
 
 }
